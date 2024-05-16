@@ -1,0 +1,7 @@
+import os
+import pandas as pd
+df = pd.read_excel(r'DataBase.xlsx')
+k= df[df.duplicated(subset='DOI', keep=False)]
+df.drop_duplicates(subset ="DOI",
+                     keep = False, inplace = True)
+df.to_excel('Dataset.xlsx')
